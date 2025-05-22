@@ -1,5 +1,5 @@
 module "azure_budget" {
-  source          = "../modules/budget-alerting"
+  source          = "../../modules/budget-alerting"
   budget_name           = "monthly-cost-budget"
   subscription_id = var.subscription_id
   budget_amount   = var.budget_amount
