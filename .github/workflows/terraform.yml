@@ -1,8 +1,6 @@
 name: 'Terraform Apply for Azure Budget'
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 env:
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
