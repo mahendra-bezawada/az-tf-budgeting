@@ -1,8 +1,6 @@
 name: 'Terraform Apply for Azure Budget'
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   terraform:
