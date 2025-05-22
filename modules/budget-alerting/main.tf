@@ -8,10 +8,10 @@ resource "azurerm_consumption_budget_subscription" "budget" {
     start_date = var.start_date
   }
 
-  filter {
-    # Optional: Add filters like resource groups or meters
-    # resource_groups = var.resource_groups
-  }
+#   filter {
+#     # Optional: Add filters like resource groups or meters
+#     # resource_groups = var.resource_groups
+#   }
 
   notification {
     enabled        = true
