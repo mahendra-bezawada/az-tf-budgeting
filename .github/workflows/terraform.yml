@@ -38,6 +38,6 @@ jobs:
 
       - name: Terraform Apply
         # if: github.ref == 'refs/heads/main'
-        run: 
+        run: |
           cd environments/dev_sub_con_oldrg
           terraform apply -auto-approve
