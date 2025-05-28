@@ -1,5 +1,5 @@
-module "azure_budget" {
-  source          = "../../modules/subscription-consumption-oldrg"
+module "azure_budget_alert" {
+  source                      = "../../modules/subscription-consumption-oldrg"
   subscription_id            = var.subscription_id
   resource_group_name        = var.resource_group_name
   location                   = var.location
