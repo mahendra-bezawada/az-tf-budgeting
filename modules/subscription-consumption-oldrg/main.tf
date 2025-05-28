@@ -1,4 +1,4 @@
-data "azurerm_subscription" "current" {}
+#data "azurerm_subscription" "current" {}
 
 resource "azurerm_monitor_action_group" "example" {
   name                = var.action_group_name
@@ -8,7 +8,7 @@ resource "azurerm_monitor_action_group" "example" {
 
 resource "azurerm_consumption_budget_subscription" "example" {
   name            = var.budget_name
-  subscription_id = data.azurerm_subscription.current.id
+  subscription_id = var.subscription_id
 
   amount     = var.budget_amount
   time_grain = var.time_grain
