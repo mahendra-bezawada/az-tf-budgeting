@@ -24,7 +24,7 @@ jobs:
       - name: Terraform Init
         run: |
           cd environments/dev_sub_con_oldrg
-          terraform init
+          terraform init -backend-config=backend.config
 
       - name: Terraform Validate
         run: |
