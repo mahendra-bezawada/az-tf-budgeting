@@ -8,8 +8,8 @@ action_group_short_name    = "demoactngrp" #12characters only
 budget_name                = "setbytf"
 budget_amount              = 100
 time_grain                 = "Monthly"
-start_date                 = "2022-04-01T00:00:00Z"
-end_date                   = "2022-04-30T00:00:00Z"
+start_date                 = "2025-05-01T00:00:00Z"
+end_date                   = "2025-05-31T00:00:00Z" #End date should be greater than or equal to the current date
 
 # Optional filtering
 # filter_tag_name            = "foo"
