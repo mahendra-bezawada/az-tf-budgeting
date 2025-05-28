@@ -23,21 +23,21 @@ jobs:
 
       - name: Terraform Init
         run: |
-          cd environments/dev
+          cd environments/dev_sub_con_oldrg
           terraform init
 
       - name: Terraform Validate
         run: |
-          cd environments/dev
+          cd environments/dev_sub_con_oldrg
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd environments/dev
+          cd environments/dev_sub_con_oldrg
           terraform plan
 
       - name: Terraform Apply
         # if: github.ref == 'refs/heads/main'
         run: 
-          cd environments/dev
+          cd environments/dev_sub_con_oldrg
           terraform apply -auto-approve
