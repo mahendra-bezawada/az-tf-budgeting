@@ -3,7 +3,7 @@ resource_group_name        = "rg-servers"
 location                   = "westus"
 
 action_group_name          = "demo-actiongrp"
-action_group_short_name    = "demo-actiongrp"
+action_group_short_name    = "demoactngrp" #12characters only
 
 budget_name                = "setbytf"
 budget_amount              = 100
