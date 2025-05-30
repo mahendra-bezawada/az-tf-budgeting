@@ -1,8 +1,8 @@
-variable "budget_name" {
+variable "name" {
   type = string
 }
 
-variable "budget_amount" {
+variable "amount" {
   type = number
 }
 

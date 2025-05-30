@@ -2,8 +2,8 @@ resource_group_name     = "rg-servers"
 resource_group_location = "West US"
 subscription_id            = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004"
 
-budget_name    = "my-rg-budget"
-budget_amount  = 150
+name    = "my-rg-budget"
+amount  = 150
 time_grain     = "Monthly"
 
 time_period_start = "2025-05-01T00:00:00Z"
