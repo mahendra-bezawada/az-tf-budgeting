@@ -1,4 +1,4 @@
-resource_group_name     = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
+resource_group_id     = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
 resource_group_location = "West US"
 
 budget_name    = "my-rg-budget"
