@@ -2,9 +2,6 @@ variable "name" {
   type = string
 }
 
-variable "amount" {
-  type = number
-}
 
 variable "resource_group_name" {
   description = "The name of the resource group to apply the budget to."
