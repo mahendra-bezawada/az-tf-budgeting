@@ -36,7 +36,7 @@ jobs:
       - name: Terraform Plan
         run: |
           cd environments/dev_azurerm_consumption_budget_resource_group
-          terraform plan
+          terraform plan -var-file="terraform.tfvars"
 
       - name: Terraform Apply
         # if: github.ref == 'refs/heads/main'
