@@ -20,12 +20,16 @@ resource "azurerm_consumption_budget_resource_group" "budget_rg" {
   }
 
     dynamic "filter" {
-    for_each = var.filters != null ? [1] : []
-    content {
-        ResourceGroupName = try(var.filters, "ResourceGroupName", null)
-        meter          = try(var.filters, "meter", null)
-        ResourceId   = try(var.filters, "ResourceId", null)
-    }
+      for_each = var.filters != null ? [1] : []
+      content {
+        dynamic "dimension" {
+          for_each = var.filters
+          content {
+            name   = dimension.value.name
+            values = dimension.value.values
+          }
+        }
+      }
     }
 
 }

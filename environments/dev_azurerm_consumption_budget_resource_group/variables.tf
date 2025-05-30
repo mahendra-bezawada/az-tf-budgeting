@@ -41,11 +41,11 @@ variable "notifications" {
 }
 
 variable "filters" {
-  description = "Optional filters to limit the scope of the budget."
-  type = object({
-    resourcResourceGroupNamee_groups = list(string)
-    meter         = list(string)
-    ResourceId   = string
-  })
+  description = "Optional dimensions to filter the scope of the budget."
+  type = list(object({
+    name   = string
+    values = list(string)
+  }))
   default = null
 }
+

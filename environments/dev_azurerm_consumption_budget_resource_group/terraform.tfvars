@@ -17,9 +17,14 @@ notifications = {
   }
 }
 
-filters = {
-  resource_groups = ["rg-servers"]
-  meters          = []
-  resource_tags   = {
+filters = [
+  {
+    name   = "ResourceGroupName"
+    values = ["rg-servers"]
+  },
+  {
+    name   = "ServiceName"
+    values = ["Virtual Machines"]
   }
-}
+]
+
