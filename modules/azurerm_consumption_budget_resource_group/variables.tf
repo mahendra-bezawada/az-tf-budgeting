@@ -1,8 +1,3 @@
-variable "name" {
-  description = "The name of the budget."
-  type        = string
-}
-
 variable "budget_name" {
   type = string
 }
