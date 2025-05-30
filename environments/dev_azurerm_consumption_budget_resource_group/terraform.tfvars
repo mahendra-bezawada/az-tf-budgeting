@@ -1,6 +1,5 @@
 resource_group_name     = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
 resource_group_location = "West US"
-subscription_id            = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004"
 
 name    = "my-rg-budget"
 amount  = 150
@@ -20,5 +19,7 @@ notifications = {
 
 filters = {
   resource_groups = ["rg-servers"]
-  resources       = []
+  meters          = []
+  resource_tags   = {
+  }
 }

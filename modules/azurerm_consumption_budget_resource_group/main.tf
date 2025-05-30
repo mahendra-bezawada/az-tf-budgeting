@@ -1,16 +1,15 @@
 resource "azurerm_consumption_budget_resource_group" "budget_rg" {
   name                = var.budget_name
   resource_group_id  = var.resource_group_id
-  subscription_id       = var.subscription_id
   amount              = var.budget_amount
   time_grain          = var.time_grain
 
   time_period {
-    start = var.time_period_start
-    end   = var.time_period_end
+    start_date  = var.time_period_start
+    start_date    = var.time_period_end
   }
 
-  dynamic "notifications" {
+  dynamic "notification" {
     for_each = var.notifications
     content {
       enabled        = lookup(notifications.value, "enabled", true)
@@ -20,11 +19,13 @@ resource "azurerm_consumption_budget_resource_group" "budget_rg" {
     }
   }
 
-  dynamic "filter" {
+    dynamic "filter" {
     for_each = var.filters != null ? [1] : []
     content {
-      resource_groups = lookup(var.filters, "resource_groups", null)
-      resources       = lookup(var.filters, "resources", null)
+        resource_groups = lookup(var.filters, "resource_groups", null)
+        meters          = lookup(var.filters, "meters", null)
+        resource_tags   = lookup(var.filters, "resource_tags", null)
     }
-  }
+    }
+
 }

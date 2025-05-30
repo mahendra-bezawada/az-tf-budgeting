@@ -8,11 +8,6 @@ variable "resource_group_id" {
   type        = string
 }
 
-variable "subscription_id" {
-  description = "The subscription ID for which the budget applies."
-  type        = string
-}
-
 variable "budget_amount" {
   description = "The budget amount (e.g., in USD)."
   type        = number
@@ -41,14 +36,22 @@ variable "notifications" {
     threshold      = number
     contact_emails = list(string)
   }))
-  default = {}
+  default = {
+    default = {
+      enabled        = true
+      operator       = "GreaterThan"
+      threshold      = 90
+      contact_emails = ["mahendra.bezawada@gmail.com"]
+    }
+  }
 }
 
 variable "filters" {
   description = "Optional filters to limit the scope of the budget."
   type = object({
     resource_groups = list(string)
-    resources       = list(string)
+    meters          = list(string)
+    resource_tags   = map(string)
   })
   default = null
 }
