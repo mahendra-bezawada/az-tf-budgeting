@@ -8,7 +8,7 @@ time_grain     = "Monthly"
 time_period_start = "2025-05-01T00:00:00Z"
 time_period_end   = "2025-15-31T00:00:00Z"
 
-notifications = {
+notification = {
   budget_alert = {
     enabled        = true
     operator       = "GreaterThan"

@@ -28,7 +28,7 @@ variable "time_period_end" {
   type        = string
 }
 
-variable "notifications" {
+variable "notification" {
   description = "A map of notification configurations keyed by name."
   type = map(object({
     enabled        = bool
@@ -36,6 +36,7 @@ variable "notifications" {
     threshold      = number
     contact_emails = list(string)
   }))
+
   default = {
     default = {
       enabled        = true
