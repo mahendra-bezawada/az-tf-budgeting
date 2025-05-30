@@ -1,5 +1,5 @@
 resource_group_id     = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
-resource_group_location = "West US"
+// resource_group_location = "West US"
 
 budget_name    = "my-rg-budget"
 budget_amount  = 150

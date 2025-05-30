@@ -7,6 +7,6 @@ module "azurerm_consumption_budget_resource_group" {
   time_grain          = var.time_grain
   time_period_start   = var.time_period_start
   time_period_end     = var.time_period_end
-  notifications       = var.notifications
+  notification       = var.notifications
   filters             = var.filters
 }
