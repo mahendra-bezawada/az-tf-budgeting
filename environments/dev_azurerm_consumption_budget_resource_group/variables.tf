@@ -4,7 +4,7 @@ variable "budget_name" {
 }
 
 
-variable "resource_group_name" {
+variable "resource_group_id" {
   description = "The name of the resource group to apply the budget to."
   type        = string
 }
