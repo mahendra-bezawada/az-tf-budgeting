@@ -10,12 +10,12 @@ resource "azurerm_consumption_budget_resource_group" "budget_rg" {
   }
 
   dynamic "notification" {
-    for_each = var.notifications
+    for_each = var.notification
     content {
-      enabled        = lookup(notifications.value, "enabled", true)
-      operator       = notifications.value.operator
-      threshold      = notifications.value.threshold
-      contact_emails = notifications.value.contact_emails
+      enabled        = lookup(notification.value, "enabled", true)
+      operator       = notification.value.operator
+      threshold      = notification.value.threshold
+      contact_emails = notification.value.contact_emails
     }
   }
 
