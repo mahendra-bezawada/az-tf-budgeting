@@ -1,0 +1,12 @@
+module "azurerm_consumption_budget_resource_group" {
+  source = "../../modules/azurerm_consumption_budget_resource_group"
+
+  name                = var.budget_name
+  resource_group_name = var.resource_group_name
+  amount              = var.budget_amount
+  time_grain          = var.time_grain
+  time_period_start   = var.time_period_start
+  time_period_end     = var.time_period_end
+  notifications       = var.notifications
+  filters             = var.filters
+}

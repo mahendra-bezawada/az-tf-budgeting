@@ -1,0 +1,23 @@
+resource_group_name     = "rg-servers"
+resource_group_location = "West US"
+
+budget_name    = "my-rg-budget"
+budget_amount  = 150
+time_grain     = "Monthly"
+
+time_period_start = "2025-05-01T00:00:00Z"
+time_period_end   = "2025-15-31T00:00:00Z"
+
+notifications = {
+  budget_alert = {
+    enabled        = true
+    operator       = "GreaterThan"
+    threshold      = 80
+    contact_emails = ["mahendra.bezawada@gmail.com"]
+  }
+}
+
+filters = {
+  resource_groups = ["rg-servers"]
+  resources       = []
+}

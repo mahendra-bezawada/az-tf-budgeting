@@ -23,21 +23,21 @@ jobs:
 
       - name: Terraform Init
         run: |
-          cd environments/dev_sub_con_oldrg
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform init -backend-config=backend.config
 
       - name: Terraform Validate
         run: |
-          cd environments/dev_sub_con_oldrg
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd environments/dev_sub_con_oldrg
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform plan
 
       - name: Terraform Apply
         # if: github.ref == 'refs/heads/main'
         run: |
-          cd environments/dev_sub_con_oldrg
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform apply -auto-approve
