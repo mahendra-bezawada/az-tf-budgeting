@@ -1,4 +1,4 @@
-variable "name" {
+variable "budget_name" {
   type = string
 }
 
@@ -13,7 +13,7 @@ variable "subscription_id" {
   type        = string
 }
 
-variable "amount" {
+variable "budget_amount" {
   description = "The budget amount (e.g., in USD)."
   type        = number
 }
