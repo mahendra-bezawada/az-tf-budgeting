@@ -4,33 +4,37 @@ variable "name" {
 }
 
 variable "resource_group_name" {
-  description = "The name of the resource group the budget is for."
+  description = "The name of the resource group to apply the budget to."
+  type        = string
+}
+
+variable "subscription_id" {
+  description = "The subscription ID for which the budget applies."
   type        = string
 }
 
 variable "amount" {
-  description = "The amount of the budget."
+  description = "The budget amount (e.g., in USD)."
   type        = number
 }
 
 variable "time_grain" {
-  description = "The time grain of the budget. values: Monthly, Quarterly, Annually."
+  description = "The time grain of the budget. Allowed values: Monthly, Quarterly, Annually."
   type        = string
-  default     = "Monthly"
 }
 
 variable "time_period_start" {
-  description = "The start date  for the budget."
+  description = "Start date of the budget period in RFC3339 format (e.g., 2024-01-01T00:00:00Z)."
   type        = string
 }
 
 variable "time_period_end" {
-  description = "The end date  for the budget."
+  description = "End date of the budget period in RFC3339 format (e.g., 2024-12-31T00:00:00Z)."
   type        = string
 }
 
 variable "notifications" {
-  description = "Map of notifications to configure."
+  description = "A map of notification configurations keyed by name."
   type = map(object({
     enabled        = bool
     operator       = string
@@ -41,13 +45,10 @@ variable "notifications" {
 }
 
 variable "filters" {
-  description = "Optional filters to limit budget scope."
+  description = "Optional filters to limit the scope of the budget."
   type = object({
     resource_groups = list(string)
     resources       = list(string)
   })
-  default = {
-    resource_groups = []
-    resources       = []
-  }
+  default = null
 }

@@ -1,6 +1,7 @@
 resource "azurerm_consumption_budget_resource_group" "budget_rg" {
   name                = var.name
   resource_group_name = var.resource_group_name
+  subscription_id       = var.subscription_id
   amount              = var.amount
   time_grain          = var.time_grain
 

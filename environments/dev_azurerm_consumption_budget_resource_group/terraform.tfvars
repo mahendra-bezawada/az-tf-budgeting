@@ -1,5 +1,6 @@
 resource_group_name     = "rg-servers"
 resource_group_location = "West US"
+subscription_id            = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004"
 
 budget_name    = "my-rg-budget"
 budget_amount  = 150

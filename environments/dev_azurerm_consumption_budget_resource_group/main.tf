@@ -3,6 +3,7 @@ module "azurerm_consumption_budget_resource_group" {
 
   name                = var.budget_name
   resource_group_name = var.resource_group_name
+  subscription_id       = var.subscription_id
   amount              = var.budget_amount
   time_grain          = var.time_grain
   time_period_start   = var.time_period_start
