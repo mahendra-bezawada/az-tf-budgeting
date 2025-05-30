@@ -3,6 +3,14 @@ variable "name" {
   type        = string
 }
 
+variable "budget_name" {
+  type = string
+}
+
+variable "budget_amount" {
+  type = number
+}
+
 variable "resource_group_name" {
   description = "The name of the resource group to apply the budget to."
   type        = string

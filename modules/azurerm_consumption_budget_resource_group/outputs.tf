@@ -1,9 +1,9 @@
 output "budget_id" {
-  description = "The ID of the budget resource."
-  value       = azurerm_consumption_budget_resource_group.this.id
+  description = "ID of the budget resource."
+  value       = azurerm_consumption_budget_resource_group.budget_rg.id
 }
 
 output "budget_name" {
-  description = "The name of the budget."
-  value       = azurerm_consumption_budget_resource_group.this.name
+  description = "Name of the budget."
+  value       = azurerm_consumption_budget_resource_group.budget_rg.name
 }
