@@ -22,9 +22,9 @@ resource "azurerm_consumption_budget_resource_group" "budget_rg" {
     dynamic "filter" {
     for_each = var.filters != null ? [1] : []
     content {
-        resource_groups = lookup(var.filters, "resource_groups", null)
-        meters          = lookup(var.filters, "meters", null)
-        resource_tags   = lookup(var.filters, "resource_tags", null)
+        resource_groups = try(var.filters, "ResourceGroupName", null)
+        meters          = try(var.filters, "meter", null)
+        resource_tags   = try(var.filters, "ResourceId", null)
     }
     }
 
