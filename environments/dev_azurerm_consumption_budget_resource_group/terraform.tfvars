@@ -2,7 +2,7 @@ resource_group_name     = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/r
 resource_group_location = "West US"
 
 name    = "my-rg-budget"
-amount  = 150
+budget_amount  = 150
 time_grain     = "Monthly"
 
 time_period_start = "2025-05-01T00:00:00Z"
