@@ -6,7 +6,7 @@ resource "azurerm_consumption_budget_resource_group" "budget_rg" {
 
   time_period {
     start_date  = var.time_period_start
-    start_date    = var.time_period_end
+    end_date    = var.time_period_end
   }
 
   dynamic "notification" {
