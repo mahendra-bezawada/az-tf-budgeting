@@ -43,9 +43,9 @@ variable "notifications" {
 variable "filters" {
   description = "Optional filters to limit the scope of the budget."
   type = object({
-    resource_groups = list(string)
-    meters          = list(string)
-    resource_tags   = map(string)
+    resourcResourceGroupNamee_groups = list(string)
+    meter         = list(string)
+    ResourceId   = string
   })
   default = null
 }
