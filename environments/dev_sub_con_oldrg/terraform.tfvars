@@ -9,7 +9,7 @@ budget_name                = "setbytf"
 budget_amount              = 100
 time_grain                 = "Monthly"
 start_date                 = "2025-06-01T00:00:00Z"
-end_date                   = "2025-06-31T00:00:00Z" #End date should be greater than or equal to the current date
+end_date                   = "2025-06-30T00:00:00Z" #End date should be greater than or equal to the current date
 
 # Optional filtering
 # filter_tag_name            = "foo"
