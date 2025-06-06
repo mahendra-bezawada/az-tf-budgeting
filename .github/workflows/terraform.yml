@@ -31,16 +31,16 @@ jobs:
 
       - name: Terraform Validate
         run: |
-          cd nvironments/dev_azurerm_consumption_budget_resource_group
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd nvironments/dev_azurerm_consumption_budget_resource_group
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform plan -var-file="terraform.tfvars"
 
       - name: Terraform Apply
         # if: github.ref == 'refs/heads/main'
         run: |
-          cd nvironments/dev_azurerm_consumption_budget_resource_group
+          cd environments/dev_azurerm_consumption_budget_resource_group
           terraform apply -auto-approve
