@@ -1,7 +1,7 @@
 module "azurerm_consumption_budget_resource_group" {
   source = "../../modules/azurerm_consumption_budget_resource_group"
 
-  budget_name                = var.budget_name_rg
+  budget_name_rg                = var.budget_name_rg
   resource_group_id = var.resource_group_id
   budget_amount_rg              = var.budget_amount_rg
   time_grain_rg          = var.time_grain_rg
