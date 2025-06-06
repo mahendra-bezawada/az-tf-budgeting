@@ -1,10 +1,10 @@
 module "azurerm_consumption_budget_resource_group" {
   source = "../../modules/azurerm_consumption_budget_resource_group"
 
-  budget_name                = var.budget_name_rg
+  budget_name_rg                = var.budget_name_rg
   resource_group_id = var.resource_group_id
-  budget_amount              = var.budget_amount_rg
-  time_grain          = var.time_grain_rg
+  budget_amount_rg              = var.budget_amount_rg
+  time_grain_rg          = var.time_grain_rg
   time_period_start   = var.time_period_start
   time_period_end     = var.time_period_end
   notification       = var.notification
@@ -17,9 +17,9 @@ module "azurerm_consumption_budget_resource_group" {
   action_group_name          = var.action_group_name
   action_group_short_name    = var.action_group_short_name
 
-  budget_name                = var.budget_name_sub
-  budget_amount              = var.budget_amount_sub
-  time_grain                 = var.time_grain_sub
+  budget_name_sub                = var.budget_name_sub
+  budget_amount_sub              = var.budget_amount_sub
+  time_grain_sub                 = var.time_grain_sub
   start_date                 = var.start_date
   end_date                   = var.end_date
   notification_1_threshold   = var.notification_1_threshold
