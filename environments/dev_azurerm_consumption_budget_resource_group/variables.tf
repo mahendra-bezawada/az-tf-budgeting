@@ -82,7 +82,7 @@ variable "action_group_short_name" {
   description = "Short name for the action group"
   type        = string
 }
-
+*/
 variable "budget_name_sub" {
   description = "Name of the consumption budget"
   type        = string
@@ -97,7 +97,7 @@ variable "time_grain_sub" {
   description = "Time grain for the budget (Monthly/Quarterly/etc.)"
   type        = string
 }
-*/
+
 
 variable "start_date" {
   description = "Start date of the budget period"
