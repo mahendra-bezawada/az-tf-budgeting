@@ -32,7 +32,7 @@ jobs:
       - name: Terraform Validate
         run: |
           cd environments/dev_azurerm_consumption_budget_resource_group
-          terraform validate
+          terraform validate -var-file="terraform.tfvars"
 
       - name: Terraform Plan
         run: |
