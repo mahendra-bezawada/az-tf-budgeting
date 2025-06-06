@@ -14,8 +14,8 @@ module "azurerm_consumption_budget_resource_group" {
   resource_group_name        = var.resource_group_name
   location                   = var.location
 
-  action_group_name          = var.action_group_name
-  action_group_short_name    = var.action_group_short_name
+  #action_group_name          = var.action_group_name
+  #action_group_short_name    = var.action_group_short_name
 
   #budget_name_sub                = var.budget_name_sub
   #budget_amount_sub              = var.budget_amount_sub

@@ -54,7 +54,6 @@ resource "azurerm_consumption_budget_subscription" "example" {
     threshold       = var.notification_1_threshold
     operator        = var.notification_1_operator
     contact_emails  = var.notification_1_emails
-    contact_groups  = [azurerm_monitor_action_group.example.id]
     contact_roles   = var.notification_1_roles
   }
 
