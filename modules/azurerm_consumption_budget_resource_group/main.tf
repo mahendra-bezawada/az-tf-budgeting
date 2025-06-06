@@ -37,11 +37,11 @@ resource "azurerm_consumption_budget_resource_group" "budget_rg" {
 
 #subscrption budget
 resource "azurerm_consumption_budget_subscription" "example" {
-  name            = var.budget_name_sub
+  name            = var.budget_name_rg
   subscription_id = var.subscription_id
 
-  amount     = var.budget_amount_sub
-  time_grain = var.time_grain_sub
+  amount     = var.budget_amount_rg
+  time_grain = var.time_grain_rg
 
   time_period {
     start_date = var.start_date
