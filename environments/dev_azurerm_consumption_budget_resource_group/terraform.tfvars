@@ -34,8 +34,6 @@ subscription_id            = "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c200
 resource_group_name        = "rg-servers"
 location                   = "westus"
 
-action_group_name          = "demo-actiongrp"
-action_group_short_name    = "demoactngrp" #12characters only
 
 budget_name_rg                = "setbytf"
 budget_amount_rg              = 100

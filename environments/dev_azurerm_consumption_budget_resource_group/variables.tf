@@ -72,7 +72,7 @@ variable "location" {
   type        = string
   default     = "eastus"
 }
-
+/*
 variable "action_group_name" {
   description = "Name of the monitor action group"
   type        = string
@@ -82,7 +82,7 @@ variable "action_group_short_name" {
   description = "Short name for the action group"
   type        = string
 }
-/*
+
 variable "budget_name_sub" {
   description = "Name of the consumption budget"
   type        = string
