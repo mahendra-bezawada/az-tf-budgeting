@@ -1,8 +1,8 @@
 module "azurerm_consumption_budget_resource_group" {
   source = "../../modules/azurerm_consumption_budget_resource_group"
-   for_each = {
-    for key, value in each.value : key => value
-    if try(value.enabled, false) == true
+  for_each = {
+    for key, value in local.azurerm_consumption_budget_resource_group : key => value
+    if try(value.enabled, false)
   }
 
   budget_name_rg         = each.value.budget_name_rg
