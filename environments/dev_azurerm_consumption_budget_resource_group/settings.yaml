@@ -1,39 +1,44 @@
 azurerm_consumption_budget_resource_group:
-  budget_name_rg: "test-budget"
-  resource_group_id: "/subscriptions/xxx/resourceGroups/rg-demo"
-  budget_amount_rg: 100
-  time_grain_rg: "Monthly"
+  resource_group_id: "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
+  budget_name_sub: "my-rg-budget"
+  budget_amount_sub: 150
+  time_grain_sub: "Monthly"
+
   time_period_start: "2025-06-01T00:00:00Z"
   time_period_end: "2025-06-30T00:00:00Z"
+
   notification:
     budget_alert:
       enabled: true
       operator: "GreaterThan"
-      threshold: 90
+      threshold: 80
       contact_emails:
-        - "mb13691@outlook.com"
+        - "mahendra.bezawada@gmail.com"
+
   filters:
     - name: "ResourceGroupName"
-      values: ["rg-demo"]
+      values: ["rg-servers"]
     - name: "ServiceName"
       values: ["Virtual Machines"]
 
-  subscription_id: "/subscriptions/xxx"
-  resource_group_name: "rg-demo"
-  location: "eastus"
+  subscription_id: "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004"
+  resource_group_name: "rg-servers"
+  location: "westus"
 
-  budget_name_sub: "sub-budget"
-  budget_amount_sub: 150
-  time_grain_sub: "Monthly"
+  budget_name_rg: "setbytf"
+  budget_amount_rg: 100
+  time_grain_rg: "Monthly"
   start_date: "2025-06-01T00:00:00Z"
   end_date: "2025-06-30T00:00:00Z"
-  notification_1_threshold: 80
+
+  notification_1_threshold: 80.0
   notification_1_operator: "EqualTo"
   notification_1_emails:
-    - "mb13691@outlook.com"
+    - "mahendra.bezawada@gmail.com"
   notification_1_roles:
     - "Owner"
-  notification_2_threshold: 90
+
+  notification_2_threshold: 90.0
   notification_2_operator: "GreaterThan"
   notification_2_emails:
-    - "mb13691@outlook.com"
+    - "mahendra.bezawada@gmail.com"

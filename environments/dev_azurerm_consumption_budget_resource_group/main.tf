@@ -1,31 +1,34 @@
 module "azurerm_consumption_budget_resource_group" {
   source = "../../modules/azurerm_consumption_budget_resource_group"
 
-  budget_name_rg           = local.budget.budget_name_rg
-  resource_group_id        = local.budget.resource_group_id
-  budget_amount_rg         = local.budget.budget_amount_rg
-  time_grain_rg            = local.budget.time_grain_rg
-  time_period_start        = local.budget.time_period_start
-  time_period_end          = local.budget.time_period_end
-  notification             = local.budget.notification
-  filters                  = local.budget.filters
+    for_each = {
+    for key, value in try(local.settings.azurerm_consumption_budget_resource_group, {}) : key => value
+    if true
+  }
 
-  subscription_id          = local.budget.subscription_id
-  resource_group_name      = local.budget.resource_group_name
-  location                 = local.budget.location
-
-  budget_name_sub          = local.budget.budget_name_sub
-  budget_amount_sub        = local.budget.budget_amount_sub
-  time_grain_sub           = local.budget.time_grain_sub
-  start_date               = local.budget.start_date
-  end_date                 = local.budget.end_date
-  notification_1_threshold = local.budget.notification_1_threshold
-  notification_1_operator  = local.budget.notification_1_operator
-  notification_1_emails    = local.budget.notification_1_emails
-  notification_1_roles     = local.budget.notification_1_roles
-  notification_2_threshold = local.budget.notification_2_threshold
-  notification_2_operator  = local.budget.notification_2_operator
-  notification_2_emails    = local.budget.notification_2_emails
+  budget_name_rg         = each.value.budget_name_rg
+  resource_group_id      = each.value.resource_group_id
+  budget_amount_rg       = each.value.budget_amount_rg
+  time_grain_rg          = each.value.time_grain_rg
+  time_period_start      = each.value.time_period_start
+  time_period_end        = each.value.time_period_end
+  notification           = each.value.notification
+  filters                = each.value.filters
+  subscription_id        = each.value.subscription_id
+  resource_group_name    = each.value.resource_group_name
+  location               = each.value.location
+  budget_name_sub        = each.value.budget_name_sub
+  budget_amount_sub      = each.value.budget_amount_sub
+  time_grain_sub         = each.value.time_grain_sub
+  start_date             = each.value.start_date
+  end_date               = each.value.end_date
+  notification_1_threshold = each.value.notification_1_threshold
+  notification_1_operator  = each.value.notification_1_operator
+  notification_1_emails    = each.value.notification_1_emails
+  notification_1_roles     = each.value.notification_1_roles
+  notification_2_threshold = each.value.notification_2_threshold
+  notification_2_operator  = each.value.notification_2_operator
+  notification_2_emails    = each.value.notification_2_emails
 }
 
 
