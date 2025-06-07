@@ -13,7 +13,7 @@ azurerm_consumption_budget_resource_group:
       operator: "GreaterThan"
       threshold: 80
       contact_emails:
-        - "mb13691@outlook.com"
+        - ""
 
   filters:
     - name: "ResourceGroupName"
@@ -34,11 +34,11 @@ azurerm_consumption_budget_resource_group:
   notification_1_threshold: 80.0
   notification_1_operator: "EqualTo"
   notification_1_emails:
-    - "mb13691@outlook.com"
+    - ""
   notification_1_roles:
     - "Owner"
 
   notification_2_threshold: 90.0
   notification_2_operator: "GreaterThan"
   notification_2_emails:
-    - "mahendra.bezawada@gmail.com"
+    - ""
