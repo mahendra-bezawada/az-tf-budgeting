@@ -1,31 +1,35 @@
 module "azurerm_consumption_budget_resource_group" {
   source = "../../modules/azurerm_consumption_budget_resource_group"
+   for_each = {
+    for key, value in each.value : key => value
+    if try(value.enabled, false) == true
+  }
 
-  budget_name_rg         = local.azurerm_consumption_budget_resource_group.budget_name_rg
-  resource_group_id      = local.azurerm_consumption_budget_resource_group.resource_group_id
-  budget_amount_rg       = local.azurerm_consumption_budget_resource_group.budget_amount_rg
-  time_grain_rg          = local.azurerm_consumption_budget_resource_group.time_grain_rg
-  time_period_start      = local.azurerm_consumption_budget_resource_group.time_period_start
-  time_period_end        = local.azurerm_consumption_budget_resource_group.time_period_end
-  notification           = local.azurerm_consumption_budget_resource_group.notification
-  filters                = local.azurerm_consumption_budget_resource_group.filters
+  budget_name_rg         = each.value.budget_name_rg
+  resource_group_id      = each.value.resource_group_id
+  budget_amount_rg       = each.value.budget_amount_rg
+  time_grain_rg          = each.value.time_grain_rg
+  time_period_start      = each.value.time_period_start
+  time_period_end        = each.value.time_period_end
+  notification           = each.value.notification
+  filters                = each.value.filters
 
-  subscription_id            = local.azurerm_consumption_budget_resource_group.subscription_id
-  resource_group_name        = local.azurerm_consumption_budget_resource_group.resource_group_name
-  location                   = local.azurerm_consumption_budget_resource_group.location
+  subscription_id            = each.value.subscription_id
+  resource_group_name        = each.value.resource_group_name
+  location                   = each.value.location
 
-  budget_name_sub            = local.azurerm_consumption_budget_resource_group.budget_name_sub
-  budget_amount_sub          = local.azurerm_consumption_budget_resource_group.budget_amount_sub
-  time_grain_sub             = local.azurerm_consumption_budget_resource_group.time_grain_sub
-  start_date                 = local.azurerm_consumption_budget_resource_group.start_date
-  end_date                   = local.azurerm_consumption_budget_resource_group.end_date
-  notification_1_threshold   = local.azurerm_consumption_budget_resource_group.notification_1_threshold
-  notification_1_operator    = local.azurerm_consumption_budget_resource_group.notification_1_operator
-  notification_1_emails      = local.azurerm_consumption_budget_resource_group.notification_1_emails
-  notification_1_roles       = local.azurerm_consumption_budget_resource_group.notification_1_roles
-  notification_2_threshold   = local.azurerm_consumption_budget_resource_group.notification_2_threshold
-  notification_2_operator    = local.azurerm_consumption_budget_resource_group.notification_2_operator
-  notification_2_emails      = local.azurerm_consumption_budget_resource_group.notification_2_emails
+  budget_name_sub            = each.value.budget_name_sub
+  budget_amount_sub          = each.value.budget_amount_sub
+  time_grain_sub             = each.value.time_grain_sub
+  start_date                 = each.value.start_date
+  end_date                   = each.value.end_date
+  notification_1_threshold   = each.value.notification_1_threshold
+  notification_1_operator    = each.value.notification_1_operator
+  notification_1_emails      = each.value.notification_1_emails
+  notification_1_roles       = each.value.notification_1_roles
+  notification_2_threshold   = each.value.notification_2_threshold
+  notification_2_operator    = each.value.notification_2_operator
+  notification_2_emails      = each.value.notification_2_emails
 }
 
 

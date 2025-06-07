@@ -1,44 +1,52 @@
 azurerm_consumption_budget_resource_group:
-  resource_group_id: "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
-  budget_name_sub: "sub-budget-consumption"
-  budget_amount_sub: 1500
-  time_grain_sub: "Monthly"
+  default:
+    enabled: true
+    resource_group_id: "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004/resourceGroups/rg-servers"
 
-  time_period_start: "2025-06-01T00:00:00Z"
-  time_period_end: "2025-06-30T00:00:00Z"
+    # Resource Group Budget
+    budget_name_rg: "rg-budget-alert"
+    budget_amount_rg: 1000
+    time_grain_rg: "Monthly"
+    time_period_start: "2025-06-01T00:00:00Z"
+    time_period_end: "2025-06-30T00:00:00Z"
 
-  notification:
-    budget_alert:
-      enabled: true
-      operator: "GreaterThan"
-      threshold: 80
-      contact_emails:
-        - ""
+    # Subscription Budget
+    budget_name_sub: "sub-budget-consumption"
+    budget_amount_sub: 1500
+    time_grain_sub: "Monthly"
+    start_date: "2025-06-01T00:00:00Z"
+    end_date: "2025-06-30T00:00:00Z"
 
-  filters:
-    - name: "ResourceGroupName"
-      values: ["rg-servers"]
-    - name: "ServiceName"
-      values: ["Virtual Machines"]
+    # Notification for RG budget
+    notification:
+      budget_alert:
+        enabled: true
+        operator: "GreaterThan"
+        threshold: 80
+        contact_emails:
+          - "test-email@example.com"
 
-  subscription_id: "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004"
-  resource_group_name: "rg-servers"
-  location: "westus"
+    # Filters
+    filters:
+      - name: "ResourceGroupName"
+        values: ["rg-servers"]
+      - name: "ServiceName"
+        values: ["Virtual Machines"]
 
-  budget_name_rg: "rg-budget-alert"
-  budget_amount_rg: 1000
-  time_grain_rg: "Monthly"
-  start_date: "2025-06-01T00:00:00Z"
-  end_date: "2025-06-30T00:00:00Z"
+    # Shared Settings
+    subscription_id: "/subscriptions/bb81a390-6789-4184-a745-a5cfe71c2004"
+    resource_group_name: "rg-servers"
+    location: "westus"
 
-  notification_1_threshold: 80.0
-  notification_1_operator: "EqualTo"
-  notification_1_emails:
-    - ""
-  notification_1_roles:
-    - "Owner"
+    # Notifications for subscription budget
+    notification_1_threshold: 80.0
+    notification_1_operator: "EqualTo"
+    notification_1_emails:
+      - "test-email@example.com"
+    notification_1_roles:
+      - "Owner"
 
-  notification_2_threshold: 90.0
-  notification_2_operator: "GreaterThan"
-  notification_2_emails:
-    - ""
+    notification_2_threshold: 90.0
+    notification_2_operator: "GreaterThan"
+    notification_2_emails:
+      - "test-email@example.com"
