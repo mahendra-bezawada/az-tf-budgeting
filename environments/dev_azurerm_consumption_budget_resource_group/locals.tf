@@ -1,5 +1,4 @@
 locals {
-  settings_file = file("./settings.yaml")
-  settings      = yamldecode(local.settings_file)
-
+  settings = yamldecode(file("./settings.yaml"))
+  azurerm_consumption_budget_resource_group = local.settings.azurerm_consumption_budget_resource_group
 }
