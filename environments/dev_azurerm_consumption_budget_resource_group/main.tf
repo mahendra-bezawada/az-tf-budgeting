@@ -1,6 +1,39 @@
 module "azurerm_consumption_budget_resource_group" {
   source = "../../modules/azurerm_consumption_budget_resource_group"
 
+  budget_name_rg           = local.budget.budget_name_rg
+  resource_group_id        = local.budget.resource_group_id
+  budget_amount_rg         = local.budget.budget_amount_rg
+  time_grain_rg            = local.budget.time_grain_rg
+  time_period_start        = local.budget.time_period_start
+  time_period_end          = local.budget.time_period_end
+  notification             = local.budget.notification
+  filters                  = local.budget.filters
+
+  subscription_id          = local.budget.subscription_id
+  resource_group_name      = local.budget.resource_group_name
+  location                 = local.budget.location
+
+  budget_name_sub          = local.budget.budget_name_sub
+  budget_amount_sub        = local.budget.budget_amount_sub
+  time_grain_sub           = local.budget.time_grain_sub
+  start_date               = local.budget.start_date
+  end_date                 = local.budget.end_date
+  notification_1_threshold = local.budget.notification_1_threshold
+  notification_1_operator  = local.budget.notification_1_operator
+  notification_1_emails    = local.budget.notification_1_emails
+  notification_1_roles     = local.budget.notification_1_roles
+  notification_2_threshold = local.budget.notification_2_threshold
+  notification_2_operator  = local.budget.notification_2_operator
+  notification_2_emails    = local.budget.notification_2_emails
+}
+
+
+
+/*
+module "azurerm_consumption_budget_resource_group" {
+  source = "../../modules/azurerm_consumption_budget_resource_group"
+
   budget_name_rg                = var.budget_name_rg
   resource_group_id = var.resource_group_id
   budget_amount_rg              = var.budget_amount_rg
@@ -30,3 +63,4 @@ module "azurerm_consumption_budget_resource_group" {
   notification_2_operator    = var.notification_2_operator
   notification_2_emails      = var.notification_2_emails
 }
+*/

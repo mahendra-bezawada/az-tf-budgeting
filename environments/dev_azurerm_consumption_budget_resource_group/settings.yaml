@@ -1,0 +1,39 @@
+azurerm_consumption_budget_resource_group:
+  budget_name_rg: "test-budget"
+  resource_group_id: "/subscriptions/xxx/resourceGroups/rg-demo"
+  budget_amount_rg: 100
+  time_grain_rg: "Monthly"
+  time_period_start: "2025-06-01T00:00:00Z"
+  time_period_end: "2025-06-30T00:00:00Z"
+  notification:
+    budget_alert:
+      enabled: true
+      operator: "GreaterThan"
+      threshold: 90
+      contact_emails:
+        - "mb13691@outlook.com"
+  filters:
+    - name: "ResourceGroupName"
+      values: ["rg-demo"]
+    - name: "ServiceName"
+      values: ["Virtual Machines"]
+
+  subscription_id: "/subscriptions/xxx"
+  resource_group_name: "rg-demo"
+  location: "eastus"
+
+  budget_name_sub: "sub-budget"
+  budget_amount_sub: 150
+  time_grain_sub: "Monthly"
+  start_date: "2025-06-01T00:00:00Z"
+  end_date: "2025-06-30T00:00:00Z"
+  notification_1_threshold: 80
+  notification_1_operator: "EqualTo"
+  notification_1_emails:
+    - "mb13691@outlook.com"
+  notification_1_roles:
+    - "Owner"
+  notification_2_threshold: 90
+  notification_2_operator: "GreaterThan"
+  notification_2_emails:
+    - "mb13691@outlook.com"
