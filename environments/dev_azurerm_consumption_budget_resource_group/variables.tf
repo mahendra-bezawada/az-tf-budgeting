@@ -42,7 +42,7 @@ variable "notification" {
       enabled        = true
       operator       = "GreaterThan"
       threshold      = 90
-      contact_emails = ["mahendra.bezawada@gmail.com"]
+      contact_emails = ["test-example@example.com"]
     }
   }
 }
